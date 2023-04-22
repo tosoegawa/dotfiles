@@ -229,6 +229,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/t-osoegawa/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["tree-sitter-astro"] = {
+    loaded = true,
+    path = "/Users/t-osoegawa/.local/share/nvim/site/pack/packer/start/tree-sitter-astro",
+    url = "https://github.com/virchau13/tree-sitter-astro"
   }
 }
 
