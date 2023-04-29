@@ -82,3 +82,9 @@ nvim_lsp.prismals.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+-- Markdown
+nvim_lsp.marksman.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
