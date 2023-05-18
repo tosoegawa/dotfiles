@@ -22,6 +22,7 @@ treesitter.setup {
     "c",
     "java",
     "typescript",
+    "javascript",
     "tsx",
     "python",
     "vim",
