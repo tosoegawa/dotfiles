@@ -4,7 +4,7 @@ local opt = vim.opt
 
 opt.encoding = 'utf-8'
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 opt.title = true
 
 opt.autoindent = true
@@ -32,3 +32,6 @@ opt.splitbelow = true
 opt.splitright = true
 
 opt.shell = 'fish'
+
+-- とりあえずここに書いとくが移したい
+vim.g.gitblame_enabled = 0

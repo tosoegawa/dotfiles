@@ -10,7 +10,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd("BufWritePre", {
       group = vim.api.nvim_create_augroup("Format", { clear = true }),
       buffer = bufnr,
-      callback = function() vim.lsp.buf.formatting_seq_sync() end,
+      callback = function() vim.lsp.buf.format({ bufnr = bufnr }) end,
     })
   end
 end
@@ -30,7 +30,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 -- TypeScript
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript" },
   cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities,
 }
@@ -39,6 +39,19 @@ nvim_lsp.tsserver.setup {
 nvim_lsp.lua_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false
+      },
+    },
+  },
 }
 
 -- Bash
@@ -91,6 +104,12 @@ nvim_lsp.marksman.setup {
 
 -- Rust
 nvim_lsp.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+-- Tailwind CSS
+nvim_lsp.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }

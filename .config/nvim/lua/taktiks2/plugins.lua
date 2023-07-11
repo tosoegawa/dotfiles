@@ -43,6 +43,7 @@ packer.startup(function(use)
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim'
+  use 'f-person/git-blame.nvim'
 
   use {
     "akinsho/toggleterm.nvim",
@@ -73,4 +74,23 @@ packer.startup(function(use)
   })
 
   use 'NvChad/nvim-colorizer.lua'
+
+  use {
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
+    event = 'InsertEnter',
+    config = function()
+      require('copilot').setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end,
+  }
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  }
 end)
