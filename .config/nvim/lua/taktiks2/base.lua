@@ -32,6 +32,3 @@ opt.splitbelow = true
 opt.splitright = true
 
 opt.shell = 'fish'
-
--- とりあえずここに書いとくが移したい
-vim.g.gitblame_enabled = 0
