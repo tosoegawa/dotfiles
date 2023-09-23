@@ -116,3 +116,15 @@ nvim_lsp.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+-- yaml
+nvim_lsp.yamlls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+-- dartls
+nvim_lsp.dartls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}

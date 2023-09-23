@@ -17,6 +17,8 @@ set PATH $HOME/Library/Android/sdk/tools/bin $PATH
 set PATH $HOME/Library/Android/sdk/platform-tools $PATH
 set PATH $HOME/bin $PATH
 set PATH $HOME/.nodebrew/current/bin $PATH
+set PATH $HOME/flutter/bin $PATH
+set -x DART_SDK /Users/t-osoegawa/flutter/bin/cache/dart-sdk
 set -x ANDROID_SDK_ROOT $HOME/Library/Android/sdk
 set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
 set -gx PATH '/Users/t-osoegawa/.rbenv/shims' $PATH
@@ -35,3 +37,9 @@ function rbenv
 end
 
 alias vim="nvim"
+alias ls="lsd"
+alias la="lsd -a"
+alias ll="lsd -al"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/t-osoegawa/google-cloud-sdk/path.fish.inc' ]; . '/Users/t-osoegawa/google-cloud-sdk/path.fish.inc'; end

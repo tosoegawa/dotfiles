@@ -28,7 +28,13 @@ packer.startup(function(use)
 
   -- telescope
   use "nvim-lua/plenary.nvim"
-  use "nvim-telescope/telescope.nvim"
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-telescope/telescope-node-modules.nvim',
+    },
+    config = function() require('telescope').load_extension('node_modules') end,
+  }
   use "nvim-telescope/telescope-file-browser.nvim"
 
   -- cmp
@@ -54,6 +60,7 @@ packer.startup(function(use)
   use {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
+    config = function() vim.g.mkdp_theme = "light" end,
   }
 
   -- git
@@ -107,6 +114,9 @@ packer.startup(function(use)
       require("copilot_cmp").setup()
     end,
   }
+
+  -- editorconfig
+  use "editorconfig/editorconfig-vim"
 
   -- self made
   use "taktiks2/say-my-name"

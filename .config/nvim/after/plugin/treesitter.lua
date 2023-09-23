@@ -30,14 +30,15 @@ treesitter.setup {
     "yaml",
     "css",
     "html",
-    "lua"
+    "lua",
+    "dart"
   },
   autotag = {
     enable = true,
   },
-  rainbow = {
-    enable = true,
-  },
+  -- rainbow = {
+  --   enable = true,
+  -- },
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
