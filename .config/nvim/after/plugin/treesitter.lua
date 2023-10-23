@@ -31,7 +31,6 @@ treesitter.setup {
     "css",
     "html",
     "lua",
-    "dart"
   },
   autotag = {
     enable = true,
